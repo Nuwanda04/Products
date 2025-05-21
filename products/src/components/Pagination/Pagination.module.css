@@ -1,0 +1,88 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 3rem 0 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.pagination::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  opacity: 0.7;
+}
+
+.pageButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  min-width: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pageButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.pageButton:hover:not(:disabled) {
+  background-color: var(--color-accent2);
+  border-color: var(--color-accent1);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pageButton:hover:not(:disabled)::before {
+  opacity: 0.3;
+}
+
+.pageButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+  color: #999;
+  border-color: #ddd;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.pageInfo {
+  color: var(--color-dark);
+  font-size: 0.875rem;
+  margin: 0 1rem;
+  min-width: 120px;
+  text-align: center;
+  font-weight: 500;
+}

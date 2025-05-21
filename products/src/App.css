@@ -1,0 +1,157 @@
+.filters-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-dropdown label {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.sort-select {
+  padding: 0.6rem 2rem 0.6rem 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+:root {
+  /* Primary Colors */
+  --color-primary: #d4b59e;      /* Warm beige - Used in ProductCard, Pagination */
+  --color-secondary: #8d6e63;   /* Medium brown - Used in FilterPanel, Pagination, Headers, Footers */
+  --color-dark: #3e2723;        /* Dark brown - Used in ProductCard, Pagination */
+  --color-accent1: #5d4037;     /* Dark brown - Used in Header, Footer, FilterPanel */
+  --color-white: #ffffff;        /* White - Used throughout for all white text */
+  
+  /* Backgrounds */
+  --bg-color: #f5f1ed;          /* Warm off-white - Main background */
+  --bg-secondary: #faf7f4;      /* Slightly off-white - Card backgrounds */
+  
+  /* Borders */
+  --border-color: #d7ccc8;      /* Light warm gray - Borders and dividers */
+  
+  /* Effects */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  /* Box shadow */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: var(--color-dark);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-accent1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent2);
+  text-decoration: underline;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.app-header {
+  grid-area: header;
+  background: var(--color-white);
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.5rem 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.app-main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr min(1200px, 100% - 2rem) 1fr;
+  gap: 2rem;
+  padding: 1rem 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-main > * {
+  grid-column: 2;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.reset-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.reset-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
